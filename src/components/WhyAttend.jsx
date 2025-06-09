@@ -20,7 +20,7 @@ const WhyAttend = () => {
     },
     {
       id: 3,
-      title: "Meet representatives from top universities in Australia & UK",
+      title: "Meet representatives from top universities in Australia",
       icon: "🌎",
       color: "#FFD166",
     },

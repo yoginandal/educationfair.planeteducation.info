@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Form, Button, Row, Col } from "react-bootstrap";
 
-import background from "../assets/banner_home.webp";
-import backgroundResp from "../assets/banner_hero_res.webp";
-import logo from "../assets/images/logo-new.webp";
+import background from "../assets/hero_banner_aus.webp";
+import backgroundResp from "../assets/hero_banner_aus_res.webp";
+import logo from "../assets/images/Planet-2.png";
 
 // Styled components moved outside the functional component
 const Wrapper = styled.section`
@@ -83,6 +83,10 @@ const Wrapper = styled.section`
   .logo {
     width: 240px;
     padding: 1rem;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
   }
   .bannerCont {
     width: 100%;
@@ -90,6 +94,7 @@ const Wrapper = styled.section`
     padding-left: 100px;
     gap: 100px;
     padding-right: 100px !important;
+    padding-top: 80px;
   }
   .left .l1 {
     font-size: 5vw;
@@ -159,6 +164,10 @@ const Wrapper = styled.section`
       padding: 0;
     }
 
+    .logo {
+      display: none;
+    }
+
     .fntSize {
       font-size: 11px;
     }
@@ -191,6 +200,17 @@ const Wrapper = styled.section`
       gap: 20px !important;
       justify-content: center;
       padding-right: 0px !important;
+      align-items: center;
+    }
+
+    .right {
+      padding: 0 20px;
+      max-width: 350px;
+      width: 100%;
+    }
+
+    .overrideWidth {
+      width: 100% !important;
     }
 
     .logo {
@@ -203,9 +223,6 @@ const Wrapper = styled.section`
       font-size: 18px;
       padding-top: 32px;
       text-align: center;
-    }
-    .right {
-      padding: 0 20px;
     }
   }
 
@@ -243,6 +260,12 @@ const Wrapper = styled.section`
       width: 100%;
     }
 
+    @media (min-width: 780px) {
+      .overrideWidth {
+        padding-top: 10rem !important;
+      }
+    }
+
     .left .l3 {
       font-size: 79px;
       font-weight: 800;
@@ -269,7 +292,13 @@ const Wrapper = styled.section`
       padding-left: 0px;
       gap: 20px !important;
       justify-content: center;
+      align-items: center;
     }
+
+    .logo {
+      display: none;
+    }
+
     .lresp1,
     .lresp2 {
       display: block;
@@ -298,6 +327,12 @@ const Wrapper = styled.section`
     }
     .right {
       margin-bottom: 15px;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .overrideWidth {
+      width: 100% !important;
     }
   }
   @media (min-width: 575px) and (max-width: 650px) {
@@ -321,7 +356,13 @@ const Wrapper = styled.section`
       padding-left: 0px;
       gap: 20px !important;
       justify-content: center;
+      align-items: center;
     }
+
+    .logo {
+      display: none;
+    }
+
     .lresp1,
     .lresp2 {
       display: block;
@@ -350,6 +391,12 @@ const Wrapper = styled.section`
     }
     .right {
       margin-bottom: 15px;
+      max-width: 450px;
+      width: 100%;
+    }
+
+    .overrideWidth {
+      width: 100% !important;
     }
   }
   @media (min-width: 1024px) and (max-width: 1150px) {
@@ -480,7 +527,7 @@ const LandingBanner = () => {
     email: "",
     phone: "",
     currentCity: "",
-    preferredStudyDestination: "",
+    preferredStudyDestination: "Australia",
     currentLevelOfEducation: "",
     languageTestTaken: "",
     utm_source: "",
@@ -686,32 +733,29 @@ const LandingBanner = () => {
 
     try {
       // Send to PHP endpoint only
-      await fetch(
-        "https://stealthlearn.in/studyAbroad/planetEducation_CRM.php",
-        {
-          method: "POST",
-          mode: "no-cors",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            Name: formData.Name,
-            email: formData.email,
-            phone: formData.phone,
-            current_city: formData.currentCity,
-            preferred_study_destination: formData.preferredStudyDestination,
-            current_level_of_education: formData.currentLevelOfEducation,
-            language_test_taken: formData.languageTestTaken,
-            utm_source: formData.utm_source,
-            utm_medium: formData.utm_medium,
-            utm_campaign: formData.utm_campaign,
-            utm_term: formData.utm_term,
-            utm_content: formData.utm_content,
-            submission_url: window.location.href,
-            referrer: document.referrer || "",
-          }),
-        }
-      );
+      await fetch("https://stealthlearn.in/studyAbroad/planetnew_CRM.php", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          Name: formData.Name,
+          email: formData.email,
+          phone: formData.phone,
+          current_city: formData.currentCity,
+          preferred_study_destination: formData.preferredStudyDestination,
+          current_level_of_education: formData.currentLevelOfEducation,
+          language_test_taken: formData.languageTestTaken,
+          utm_source: formData.utm_source,
+          utm_medium: formData.utm_medium,
+          utm_campaign: formData.utm_campaign,
+          utm_term: formData.utm_term,
+          utm_content: formData.utm_content,
+          submission_url: window.location.href,
+          referrer: document.referrer || "",
+        }),
+      });
 
       // Redirect to thank you page
       window.location.href = "/thankyou.html";
@@ -728,7 +772,7 @@ const LandingBanner = () => {
   return (
     <Wrapper>
       <div className="catch">
-        <img className="logo invisible" src={logo} alt="Logo" />
+        <img className="logo" src={logo} alt="Logo" />
         <BannerContainer className="bannerCont">
           <div className="right">
             <div className="form">
@@ -827,12 +871,13 @@ const LandingBanner = () => {
                           name="preferredStudyDestination"
                           value={formData.preferredStudyDestination}
                           onChange={handleChange}
+                          disabled
                           required
                         >
                           <option value="">Preferred Study Destination</option>
                           <option value="Australia">Australia</option>
                           {/* <option value="USA">USA</option> */}
-                          <option value="UK">UK</option>
+                          {/* <option value="UK">UK</option> */}
                         </Form.Control>
                       </Form.Group>
 
@@ -869,8 +914,10 @@ const LandingBanner = () => {
                         >
                           <option value="">Any Language Test Taken?</option>
                           <option value="IELTS">IELTS</option>
+                          <option value="TOEFL">TOEFL</option>
                           <option value="PTE">PTE</option>
                           <option value="Duolingo">Duolingo</option>
+                          <option value="Others">Others</option>
                           <option value="None">None</option>
                         </Form.Control>
                       </Form.Group>
