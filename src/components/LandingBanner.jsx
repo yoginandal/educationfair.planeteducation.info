@@ -262,7 +262,7 @@ const Wrapper = styled.section`
 
     @media (min-width: 780px) {
       .overrideWidth {
-        padding-top: 10rem !important;
+        padding-top: 14rem !important;
       }
     }
 
@@ -859,26 +859,6 @@ const LandingBanner = () => {
                           onChange={handleChange}
                           required
                         />
-                      </Form.Group>
-
-                      <Form.Group
-                        controlId="formPreferredStudyDestination"
-                        className="margin-bottom borderRad"
-                      >
-                        <Form.Control
-                          className="fntSize"
-                          as="select"
-                          name="preferredStudyDestination"
-                          value={formData.preferredStudyDestination}
-                          onChange={handleChange}
-                          disabled
-                          required
-                        >
-                          <option value="">Preferred Study Destination</option>
-                          <option value="Australia">Australia</option>
-                          {/* <option value="USA">USA</option> */}
-                          {/* <option value="UK">UK</option> */}
-                        </Form.Control>
                       </Form.Group>
 
                       <Form.Group
