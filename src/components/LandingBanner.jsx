@@ -4,6 +4,7 @@ import { Form, Button, Row, Col } from "react-bootstrap";
 
 import background from "../assets/hero_banner_aus.webp";
 import backgroundResp from "../assets/hero_banner_aus_res.webp";
+import backgroundResp2 from "../assets/hero_banner_aus_res_sam.webp";
 import logo from "../assets/images/Planet-2.png";
 
 // Styled components moved outside the functional component
@@ -149,6 +150,7 @@ const Wrapper = styled.section`
   .fntSize {
     font-size: 13px;
   }
+
   @media (max-width: 450px) {
     min-height: 810px;
     background-image: url(${backgroundResp});
@@ -282,6 +284,11 @@ const Wrapper = styled.section`
       font-size: 16px;
     }
   }
+
+  @media (max-width: 400px) {
+    background-image: url(${backgroundResp2}) !important;
+  }
+
   @media (min-width: 450px) and (max-width: 768px) {
     min-height: 610px;
     background-image: url(${backgroundResp});
@@ -345,6 +352,13 @@ const Wrapper = styled.section`
       width: 61%;
     }
   }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .overrideWidth {
+      width: 61%;
+    }
+  }
+
   @media (min-width: 768px) and (max-width: 1024px) {
     min-height: 610px;
     background-image: url(${backgroundResp});
