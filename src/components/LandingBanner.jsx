@@ -230,7 +230,7 @@ const Wrapper = styled.section`
 
   @media (max-width: 400px) {
     .bannerCont {
-      margin-top: -60px;
+      margin-top: 0px;
     }
   }
   @media (max-width: 1450px) {

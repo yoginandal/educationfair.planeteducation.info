@@ -205,26 +205,26 @@ const Partners = () => {
   useEffect(() => {
     // Simulating API call to fetch partners
     const fetchedPartners = [
-      { src: part1, alt: "ANU", text: "25% tuition fee waiver per year" },
-      {
-        src: part2,
-        alt: "Charles Darwin University",
-        text: "Scholarship Up to 30%",
-      },
+      // { src: part1, alt: "ANU", text: "25% tuition fee waiver per year" },
+      // {
+      //   src: part2,
+      //   alt: "Charles Darwin University",
+      //   text: "Scholarship Up to 30%",
+      // },
       { src: part3, alt: "Deakin University", text: "25% Merit Scholarship" },
-      {
-        src: part4,
-        alt: "UNSW",
-        text: "Tuition Fee Discounts for international students",
-      },
-      { src: part5, alt: "UTS", text: "Scholarships Up to $40,000" },
-      {
-        src: part6,
-        alt: "Macquarie University",
-        text: "Early Acceptance Scholarship – $10,000/year",
-      },
-      { src: part7, alt: "Murdoch University", text: "Scholarship Upto 20%" },
-      { src: part8, alt: "RMIT", text: "20% Tuition Fee Reduction" },
+      // {
+      //   src: part4,
+      //   alt: "UNSW",
+      //   text: "Tuition Fee Discounts for international students",
+      // },
+      // { src: part5, alt: "UTS", text: "Scholarships Up to $40,000" },
+      // {
+      //   src: part6,
+      //   alt: "Macquarie University",
+      //   text: "Early Acceptance Scholarship – $10,000/year",
+      // },
+      // { src: part7, alt: "Murdoch University", text: "Scholarship Upto 20%" },
+      // { src: part8, alt: "RMIT", text: "20% Tuition Fee Reduction" },
       {
         src: part9,
         alt: "Victoria University",
@@ -235,29 +235,28 @@ const Partners = () => {
         alt: "Western Sydney University",
         text: "Scholarship Up to $6,000",
       },
-      { src: part11, alt: "CQU University", text: "Scholarships of A $20M+" },
-      {
-        src: part12,
-        alt: "James Cook University",
-        text: "Scholarships Upto 30%",
-      },
+      // { src: part11, alt: "CQU University", text: "Scholarships of A $20M+" },
+      // {
+      //   src: part12,
+      //   alt: "James Cook University",
+      //   text: "Scholarships Upto 30%",
+      // },
       {
         src: part13,
         alt: "La Trobe University",
         text: "Scholarships Upto 15 to 25% based on academic merit",
       },
-      { src: part14, alt: "UQ", text: "A$10,000 per year" },
+      // { src: part14, alt: "UQ", text: "A$10,000 per year" },
       { src: part15, alt: "SU", text: "Scholarships Up to $40,000" },
-      {
-        src: part16,
-        alt: "Monash University",
-        text: "20% Tuition Fee Reduction",
-      },
+      // {
+      //   src: part16,
+      //   alt: "Monash University",
+      //   text: "20% Tuition Fee Reduction",
+      // },
     ];
     setPartners(fetchedPartners);
-    setFeaturedPartner(
-      fetchedPartners[Math.floor(Math.random() * fetchedPartners.length)]
-    );
+    // Always feature the first partner for consistency
+    setFeaturedPartner(fetchedPartners[0]);
   }, []);
 
   return (
@@ -283,7 +282,7 @@ const Partners = () => {
               .map((partner, index) => (
                 <PartnerCard key={index} partner={partner} isFeatured={false} />
               ))}
-            <ManyMoreCard />
+            {/* <ManyMoreCard /> */}
           </AnimatePresence>
         </motion.div>
       </Container>
