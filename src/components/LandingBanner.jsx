@@ -84,7 +84,6 @@ const Wrapper = styled.section`
   .logo {
     width: 240px;
     padding: 1rem;
-    position: fixed;
     top: 20px;
     left: 20px;
     z-index: 1000;

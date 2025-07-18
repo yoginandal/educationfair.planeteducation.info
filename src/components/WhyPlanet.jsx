@@ -332,7 +332,7 @@ const WhyPlanet = () => {
       width: 100%;
     }
     h2 {
-      font-size: 35px;
+      font-size: 3rem;
       font-weight: 700;
       color: #122345;
     }
@@ -417,7 +417,7 @@ const WhyPlanet = () => {
     }
     @media (min-width: 450px) and (max-width: 768px) {
       .section-heading {
-        font-size: 24px;
+        font-size: 2rem;
       }
     }
     @media (min-width: 990px) and (max-width: 1200px) {

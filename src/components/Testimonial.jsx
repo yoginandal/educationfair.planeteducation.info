@@ -22,7 +22,7 @@ const TestimonialSection = styled.section`
     font-weight: 700;
   }
   h2 {
-    font-size: 35px;
+    font-size: 3rem;
     font-weight: 700;
     text-align: center;
     padding: 15px 0;
@@ -175,10 +175,10 @@ const TestimonialSlider = () => {
       padding: 10px 0;
     }
     h2 {
-      font-size: 35px;
+      font-size: 3rem;
       font-weight: 700;
       text-align: center;
-      padding: 15px 0;
+      padding: 28px 0;
       color: #122345;
       /* background-color: #eef1f3; */
       margin-bottom: 0;

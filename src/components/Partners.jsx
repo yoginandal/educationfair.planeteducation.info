@@ -164,6 +164,10 @@ const PartnersShowcase = styled.section`
       grid-template-columns: repeat(2, 1fr);
     }
 
+    .title {
+      font-size: 2rem;
+    }
+
     .featured-partner {
       grid-column: span 2;
       grid-row: span 1;
@@ -262,7 +266,7 @@ const Partners = () => {
   return (
     <PartnersShowcase>
       <Container>
-        <h2 className="title">Our Top University Partners</h2>
+        <h2 className="title ">Our Top University Partners</h2>
         <motion.div
           className="partners-grid"
           initial={{ opacity: 0, y: 20 }}
